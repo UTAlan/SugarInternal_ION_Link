@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "SugarCRM ION Link",
+  "description": "This extension creates a link to ION on the Case based on the Account. Now works with Sugar 7.",
+  "version": "2.5",
+  "permissions": [
+    "tabs", "storage", "http://ionapi.sugarcrm.com/*"         
+  ],
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [{
+    "run_at": "document_end",
+    "matches": ["https://sugarinternal.sugarondemand.com/*"],
+    "js": ["contentscript.js"]
+  }]
+}
